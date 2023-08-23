@@ -29,6 +29,10 @@ div.date_input_field {
   width: 100%;
 }
 
+input[type="date"] {
+  display: inline-block;
+}
+
 
 /* drag & drop */
 
