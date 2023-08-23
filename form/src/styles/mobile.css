@@ -18,7 +18,7 @@ div.two_fields_diveder {
   box-sizing: border-box;
 
   & div#number_field {
-    width: 15%;
+    width: 20%;
   }
 }
 
