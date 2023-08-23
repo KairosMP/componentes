@@ -166,7 +166,7 @@ button.btn_pagination.next-step {
 
   color: var(--color02);
 
-  width: 6em;
+  width: 10em;
   height: 2em;
 
   padding: .5em .6em .5em .6em;
@@ -193,7 +193,7 @@ button.btn_pagination.prev-step {
 
   color: var(--color02);
 
-  width: 6em;
+  width: 10em;
   height: 2em;
 
   padding: .5em .6em .5em .6em;
