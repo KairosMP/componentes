@@ -23,6 +23,13 @@ div.two_fields_diveder {
 }
 
 
+/* date input */
+
+div.date_input_field {
+  width: 100%;
+}
+
+
 /* drag & drop */
 
 div.drag_file_field > h2 , span.or {
