@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  --colorBody: #FcFcFc;
+
+  --color01: #011C40;
+  --color02: #011126;
+  --color03: #032859;
+  --color04: #074973;
+  --color05: #0048AC;
+
+  --colorSuccess: #2FCA57;
+  --colorWarning: #EDA708;
+  --colorfailure: #E92028;
+
+  --colorLineBorderFill: #3498db;
+  --colorLineBorderEmpty: #e0e0e0;
+
+  --colorInputBorder: #d5d5d5;
+  --colorInputFont: #4F4F4F;
+  --colorInputStrong: #2f2f2f;
+  --colorInputEmphasis: #65676B;
+  --colorInputPlaceholder: #65676b7c;
+
+  --fontBody: 'Roboto', 'Segoe UI', Verdana, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: fit-content;
+
+  font-family: var(--fontBody);
+  
+  background-image: radial-gradient(var(--color04), var(--color03), var(--color01) ,var(--color02));
+
+
+  color: var(--colorInputFont);
+}
+
+main {
+  position: absolute;
+
+  top: 2%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+ 
+  width: 50%;
+  min-height: 70%;
+
+  border-radius: 10px;
+
+  background-color: var(--colorBody);
+}
+
+form > fieldset > legend {
+  color: #000;
+
+  font-weight: 600;
+  font-size: 30px;
+}
+
+form > fieldset hgroup {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+form > fieldset  h2 {
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > h2 {
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+article {
+  text-align: justify;
+
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+article > strong {
+  color: var(--colorInputStrong);
+}
+
+::placeholder {
+  color: var(--colorInputPlaceholder);
+}
+
+/* fields */
+
+div.two_fields_diveder{
+  width: 100%;
+  display: flex;
+
+  & div.field {
+   width: 100%;
+  }
+
+  & div#postal_code_field {
+    width: 105px;
+  }
+
+  & div#number_field{
+    width: 10%;
+
+    & input {
+      text-align: center;
+    }
+  }
+}
+
+/* buttons-forms  */
+
+div.btns_form {
+  display: flex;
+}
+
+button.btn_pagination.next-step {
+  all: unset;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: solid 1px var(--color02);
+  border-radius: 2em;
+
+  font-size: 1em;
+  font-weight: 600;
+
+  color: var(--color02);
+
+  padding: .5em .6em .5em .6em;
+  margin: 20px 10px 20px auto;
+
+  transition: all 250ms ease-in-out;
+}
+
+button.btn_pagination.prev-step {
+  all: unset;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  border: solid 1px var(--color02);
+  border-radius: 2em;
+
+  font-size: 1em;
+  font-weight: 600;
+
+  color: var(--color02);
+
+  padding: .5em .6em .5em .6em;
+  margin: 20px auto 20px 10px;
+
+  transition: all 250ms ease-in-out;
+}
+
+button.btn_pagination:hover {
+  color: var(--colorBody);
+  background-color: var(--color03);
+}
+
+/* progress-bar */
+
+div#progress_bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+div#progress_container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+  width: 350px;
+}
+
+div#progress_container::before {
+  content: " ";
+  background-color: var(--colorLineBorderEmpty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: 1;
+}
+
+div.progress {
+  background-color: var(--colorLineBorderFill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: 1;
+  transition: 350ms ease;
+}
+
+div.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--colorLineBorderEmpty);
+  transition: 350ms ease;
+}
+
+div.circle.actived {
+  border-color: var(--colorLineBorderFill);
+}

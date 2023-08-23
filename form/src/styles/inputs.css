@@ -1,0 +1,315 @@
+/* Configurções gerais */
+
+div.field {
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px;
+}
+
+div.tow_fields > button{
+  padding: 5px;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+input {
+  all: unset;
+
+  font-size: 1.1em;
+
+  padding: .2em .5em;
+
+  border-radius: 5px;
+  border: solid 1px var(--colorInputBorder);
+
+  transition: all .3s ease-in-out;
+}
+
+input:hover, input:focus {
+  border-color: var(--color02);
+}
+
+/* select */
+
+select {
+  all: unset;
+  box-sizing: border-box;
+
+  width: 100%;
+
+  font-size: 1.1em;
+
+  padding: .2em .5em .2em .3em;
+
+  border-radius: 5px;
+  border: solid 1px var(--colorInputBorder);
+
+  transition: all .3s ease-in-out;
+}
+
+select:hover {
+  border-color: var(--color02);
+}
+
+div.select_input_field {
+  position: relative;
+  width: 80%;
+}
+
+span.arrow_select {
+  position: absolute;
+  pointer-events: none;
+
+  top: 0;
+  right: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 0 .2em .2em 0;
+
+  color: var(--colorBody);
+  background-color: var(--color02);
+
+  height: 100%;
+  width: 2.1em;
+}
+
+/* date */
+
+div.date_input_field {
+  position: relative;
+  width: 80%;
+}
+
+input[type="date"] {
+  all: unset;
+  box-sizing: border-box;
+
+  width: 100%;
+
+  font-size: 1.1em;
+
+  padding: .2em .5em .2em .3em;
+
+  border-radius: 5px;
+  border: solid 1px var(--colorInputBorder);
+
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    border-color: var(--color02);
+  }
+}
+
+span.material-symbols-outlined.date_input{ 
+  position: absolute;
+  pointer-events: none;
+
+  top: 0;
+  right: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 0 .2em .2em 0;
+
+  color: var(--colorBody);
+  background-color: var(--color02);
+
+  height: 100%;
+  width: 2.1em;
+}
+
+/* buttons */
+
+div.multi_fields,
+div.two_fields,
+div.btns_responsible {
+  display: flex;
+
+  --sizer: .2em;
+
+  & :first-child {
+    border-radius: var(--sizer) 0 0 var(--sizer);
+  }
+
+  & :last-child {
+    border-radius: 0 var(--sizer) var(--sizer) 0;
+  }
+}
+
+button.optional,
+button.btns_change_fields {
+  all: unset;
+  cursor: pointer;
+
+  font-size: 1em;
+  font-weight: 600;
+
+  padding: .5em .6em .5em .6em;
+  margin: 0;
+
+  border: solid 1px var(--color03);
+  border-collapse: collapse;
+
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    color: var(--colorBody);
+    background-color: var(--color03);
+  }
+
+  &.active {
+    color: var(--colorBody);
+    background-color: var(--color03);
+  }
+}
+
+/* checkbox */
+
+label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+
+  gap: .6em;
+
+  height: 1em;
+  
+  margin-left: .2em;
+
+  & input[type="checkbox"] {
+    cursor: pointer;
+
+    position: relative;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    
+    height: 1em;
+    width: 1em;
+
+    margin-left: 12px;
+
+    border-radius: 2px;
+
+    transition: all 150ms ease-in-out;
+
+    &.active_checkbox::after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      z-index: 1;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: var(--color05);
+    }
+
+    &.active_checkbox::before {
+      content: " ";
+      position: absolute;
+      top: 15%;
+      left: 35%;
+
+      transform: rotate(45deg);
+
+      z-index: 2;
+
+      width: 3px;
+      height: 8px;
+
+      border: solid 2px var(--colorBody);
+      border-top: none;
+      border-left: none;
+    }
+  }
+}
+
+/* inputs files */
+
+input[type='file'] {
+  display: none;
+}
+
+div.drag_file_field {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 15%;
+  width: 50%;
+
+  padding: 10px;
+
+  border: 2px dashed var(--color02);
+  border-radius: 5px;
+
+  background-color: var(--colorBody);
+  color: var(--color02);
+}
+
+ div.drag_file_field span.icon_drag_drop {
+  font-size: 25px;
+ }
+
+ div.drag_file_field h2 {
+  font-size: 15px;
+ }
+
+ div.drag_file_field button.btn_drag_drop {
+  margin: 8px;
+  padding: 5px 10px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border: none;
+  outline: none;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: var(--color02);
+
+  transition: all 250ms ease-in-out;
+ }
+
+ div.drag_file_field button.btn_drag_drop:hover {
+  scale: 1.03;
+  background-color: var(--color03);
+  color: var(--colorBody);
+ }
+
+/* fields optional */
+
+div#field_optional_deficiency, 
+div#field_optional_benefit,
+div.field_optional_student,
+div.field_parent,
+div.field_responsible {
+  display: none;
+}
+
+:is(
+  div#field_optional_deficiency, 
+  div#field_optional_benefit,
+  div.field_optional_student,
+  div.field_parent,
+  div.field_responsible).active_field {
+  display: flex;
+}

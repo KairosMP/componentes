@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="stylesheet" href="src/styles/inputs.css">
+  <link rel="stylesheet" media="(max-width: 800px)" href="src/styles/mobile.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js" integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <title>Form</title>
+</head>
+<body>
+  <main>
+
+    <div id="progress_bar">
+      <div id="progress_container">
+        <div class="progress" id="progress"></div>
+        <div class="circle active">1</div>
+        <div class="circle">2</div>
+        <div class="circle">3</div>
+        <div class="circle">4</div>
+        <div class="circle">5</div>
+      </div>
+    </div>
+
+    <form id="multi-step-form" action="">
+      <fieldset class="step">
+        <legend>Dados pessoais</legend>
+
+        <h2>Informações pessoais</h2>
+        
+        <div class="field">
+          <label for="full_name">Nome completo</label>
+          <input type="text" id="full_name" autocomplete="off" placeholder="Ex: joão da silva">
+        </div>
+        <div class="field">
+          <label for="social_name">Nome social</label>
+          <input type="text" id="social_name" autocomplete="off" placeholder="Ex: Apelido">
+          <small>(O uso do nome social deve ser adotado por esta instituição conforme o decreto da Assembleia Legislativa do Estado do Amazonas sob a Lei N. º 4.946, de 04 de outubro de 2019).</small>
+        </div>
+        <div class="field">
+          <label for="birth_date">Data nascimento</label>
+          <div class="date_input_field">
+            <input type="date" id="birth_date" autocomplete="off">
+            <span class="material-symbols-outlined date_input">
+              calendar_month
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Genêro</label>
+          
+          <div class="multi_fields">
+            <button type="button" class="optional optional_gender" data-group="gender">Masculino</button>
+            <button type="button" class="optional optional_gender" data-group="gender">Feminino</button>
+            <button type="button" class="optional optional_gender" data-group="gender">Outros</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="general_record" id="general_record_label">RG</label>
+          <input type="text" id="general_record" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="physical_person">CPF</label>
+          <input type="text" name="physical_person_name"  id="physical_person" autocomplete="off" placeholder="000.000.000-00">
+        </div>
+
+        <div class="field">
+          <label for="marital_status">Estado Civil</label>
+          <div class="select_input_field">
+            <select name="" id="marital_status">
+              <option value="Solteiro(a)" >Solteiro(a)</option>
+              <option value="Casado(a)">Casado(a)</option>
+              <option value="União estavel">União estavel</option>
+              <option value="Divorciado(a)">Divorciado(a)</option>
+              <option value="Viúvo(a)">Viúvo(a)</option>
+              <option value="Separado(a)">Separado(a)</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <span class="material-symbols-outlined arrow_select">
+              expand_more
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="naturalness">Naturalidade</label>
+          <input type="text" id="naturalness" autocomplete="off" placeholder="Ex: Amazonenses">
+        </div>
+        <div class="field">
+          <label for="nationality">Nacionalidade</label>
+          <input type="text" id="nationality" autocomplete="off" placeholder="Ex: Brasileiro">
+        </div>
+
+        <div class="field">
+          <label for="race_color">Cor/Raça</label>
+          <div class="select_input_field">
+            <select name="" id="race_color">
+              <option value="Amarela">Amarela</option>
+              <option value="Branca" >Branca</option>
+              <option value="Indigena">Indígena</option>
+              <option value="Preta">Preta</option>
+              <option value="Parda">Parda</option>
+            </select>
+            <span class="material-symbols-outlined arrow_select">
+              expand_more
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Possui deficiência?</label>
+          <div class="two_fields">
+            <button type="button" id="field_visible_deficiency" class="optional optional_deficiency" data-group="deficiency">Sim</button>
+            <button type="button" id="field_hidden_deficiency" class="optional optional_deficiency" data-group="deficiency">Não</button>
+          </div>
+        </div>
+        <div id="field_optional_deficiency" class="field">
+          <label for="deficiency">Qual deficiência?</label>
+          <input type="text" id="deficiency" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label>Você possui algum Instrumento?</label>
+          <div class="two_fields">
+            <button type="button" class="optional optional_instruments" data-group="instruments">Sim</button>
+            <button type="button" class="optional optional_instruments" data-group="instruments">Não</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn_pagination next-step">Próximo</button>
+        
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>Endereço e contato</legend>
+
+        <h2>Localidade</h2>
+        <div class="two_fields_diveder">
+          <div id="postal_code_field" class="field">
+            <label for="postal_code" >CEP</label>
+            <input type="text" id="postal_code" autocomplete="off" placeholder="00000-000">
+          </div>
+          <div class="field">
+            <label for="city">Cidade</label>
+            <input type="text" id="city" autocomplete="off">
+          </div>
+        </div>
+        <div class="field">
+          <label for="public_place">Logradouro</label>
+          <input type="text" id="public_place" autocomplete="off">
+        </div>
+        <div class="two_fields_diveder">
+          <div class="field">
+            <label for="neighborhood">Bairro</label>
+            <input type="text" id="neighborhood" autocomplete="off">
+          </div>
+          <div id="number_field" class="field">
+            <label for="house_number">Número</label>
+            <input type="text" id="house_number" autocomplete="off"
+            placeholder="0000">
+          </div>
+        </div>
+        <div class="field">
+          <label for="zone">Zona</label>
+          <div class="select_input_field">
+            <select name="" id="zone">
+              <option value="">Norte</option>
+              <option value="">Leste</option>
+              <option value="">Sul</option>
+              <option value="">Oeste</option>
+            </select>
+            <span class="material-symbols-outlined arrow_select">
+              expand_more
+            </span>
+          </div>
+        </div>
+        <h2>Contatos</h2>
+        <div class="field">
+          <label for="whatsapp" >Whatsapp</label>
+          <input type="text" id="whatsapp" class="contact_private" autocomplete="off"
+          placeholder="(00) 00000-0000">
+        </div>
+        <div class="field">
+          <label for="contact">Contato</label>
+          <input type="text"
+          id="contact" class="contact_public" autocomplete="off"
+          placeholder="(00) 00000-0000">
+        </div>
+        <div class="field">
+          <label for="email_student">E-mail</label>
+          <input type="email" id="email_student" autocomplete="off"
+          placeholder="Ex: JoaoSilva@gmail.com">
+        </div>
+
+        <div class="btns_form">
+          <button type="button" class="btn_pagination prev-step">Anterior</button>
+          <button type="button" class="btn_pagination next-step">Próximo</button>
+        </div>
+      </fieldset>
+
+     
+      <fieldset class="step">
+        <legend>Escolarida</legend>
+
+        <h2>Estudante</h2>
+
+        <div class="field">
+          <label>Estuda?</label>
+          <div class="two_fields">
+            <button type="button" id="field_visible_student" class="optional optional_student active" data-group="student">Sim</button>
+            <button type="button" id="field_hidden_student" class="optional optional_student" data-group="student">Não</button>
+          </div>
+        </div>
+
+        <div class="field field_optional_student active_field">
+          <label>Escola pública?</label>
+          <div class="two_fields">
+            <button type="button" id="field_visible_school" class="optional optional_school" data-group="school">Sim</button>
+            <button type="button" id="field_hidden_school" class="optional optional_school" data-group="school">Não</button>
+          </div>
+        </div>
+
+        <div class="field field_optional_student active_field">
+          <label for="school_name">Nome da escola</label>
+            <input type="text" id="school_name" autocomplete="off">
+        </div>
+
+        <h2 id="text_change">Onde estuda</h2>
+
+        <div class="field">
+          <label for="schooling">Escolaridade</label>
+          <div class="select_input_field">
+            <select name="" id="schooling">
+              <option value="">Fundamental</option>
+              <option value="">Médio</option>
+              <option value="">Superior</option>
+            </select>
+            <span class="material-symbols-outlined arrow_select">
+              expand_more
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="semester">Ano/semestre</label>
+          <input type="text" id="semester" autocomplete="off">
+          <small>Esse campo se refere ao ano que está.</small>
+        </div>
+
+        <div class="btns_form">
+          <button type="button" class="btn_pagination prev-step">Anterior</button>
+          <button type="button" class="btn_pagination next-step">Próximo</button>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>Dados Familiares e Socioecômico</legend>
+
+        <hgroup>
+          <h2>Renposáveis</h2>
+
+          <div class="btns_responsible">
+            <button type="button" id="btns_parent" class="btns_change_fields active" data-group="responsible">
+              Pais
+            </button>
+            <button type="button" id="btns_responsible" class="btns_change_fields" data-group="responsible">
+              Renposáveis
+            </button>
+          </div>
+        </hgroup>
+        
+        <div id="change_fields">
+          <div class="field field_parent active_field">
+            <label for="parent_father">Nome do pai</label>
+            <input type="text" id="parent_father" autocomplete="off">
+          </div>
+          <div class="field field_parent active_field">
+            <label for="parent_mother">Nome da mãe</label>
+            <input type="text" id="parent_mother" autocomplete="off">
+          </div>
+          <div class="field field_responsible">
+            <label for="responsible">Nome do responsável</label>
+            <input type="text" id="responsible" autocomplete="off">
+          </div>
+        </div>
+
+        <h2>Situação ecônomica</h2>
+
+        <div class="field">
+          <label>Trabalha?</label>
+          <div class="two_fields">
+            <button type="button" id="field_visible_job" class="optional optional_job" data-group="job">Sim</button>
+            <button type="button" id="field_hidden_job" class="optional optional_job" data-group="job">Não</button>
+          </div>
+        </div>
+        <div id="field_optional_job" class="field">
+          <label for="profession">Profissão/Ocup</label>
+          <input type="text" id="profession" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="workplace">Local de Trabalho</label>
+          <input type="text" id="workplace" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="family_income">Renda familiar - <small>em salários mínimos</small></label>
+          <div class="select_input_field">
+            <select name="" id="family_income">
+              <option value="" >0</option>
+              <option value="">1 a 3</option>
+              <option value="">4 a 6</option>
+              <option value="">7 a 9</option>
+              <option value="">10 a mais</option>
+            </select>
+            <span class="material-symbols-outlined arrow_select">
+              expand_more
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="has_residence">Possui residência?</label>
+          <div class="select_input_field">
+            <select name="" id="has_residence">
+              <option value="" >Alugada</option>
+              <option value="">Própria</option>
+              <option value="">Financiada</option>
+              <option value="">Cedida</option>
+            </select>
+            <span class="material-symbols-outlined arrow_select">
+              expand_more
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="people_live">Quantas pessoas moram em sua casa?</label>
+          <input type="text" id="people_live" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="people_work">Quantas trabalham?</label>
+          <input type="text" id="people_work" autocomplete="off">
+        </div>
+        <div class="field">
+          <label>Recebe algum benefício?</label>
+          <div class="two_fields">
+            <button type="button" id="field_visible_benefit" class="optional optional_benefit" data-group="benefit">Sim</button>
+            <button type="button" id="field_hidden_benefit" class="optional optional_benefit" data-group="benefit">Não</button>
+          </div>
+        </div>
+        <div id="field_optional_benefit" class="field">
+          <label for="benefit">Qual benefício?</label>
+          <input type="text" id="benefit">
+        </div>
+
+        <div class="btns_form">
+          <button type="button" class="btn_pagination prev-step">Anterior</button>
+          <button type="button" class="btn_pagination next-step">Próximo</button>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>Documetação</legend>
+
+        <h2>Comprovantes</h2>
+
+        <div class="field">
+          <label for="photo_student">Anexar (foto3x4)</label>
+          <input type="file" name="" id="photo_student">
+          <div class="drag_file_field">
+            <span class="material-symbols-outlined icon_drag_drop">
+            cloud_upload
+            </span>
+            <h2>Arraste e Solte o arquivo</h2>
+            <span>ou</span>
+            <button type="button" class="btn_drag_drop">Procure no seus arquivos</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="register_file_front">Anexar (RG/CNH) - <small>frente</small></label>
+          <input type="file" name="" id="register_file_front">
+          <div class="drag_file_field">
+            <span class="material-symbols-outlined icon_drag_drop">
+            cloud_upload
+            </span>
+            <h2>Arraste e Solte o arquivo</h2>
+            <span>ou</span>
+            <button type="button" class="btn_drag_drop">Procure no seus arquivos</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="registe_file_back">Anexar (RG/CNH) - <small>verso</small></label>
+          <input type="file" name="" id="registe_file_back">
+          <div class="drag_file_field">
+            <span class="material-symbols-outlined icon_drag_drop">
+            cloud_upload
+            </span>
+            <h2>Arraste e Solte o arquivo</h2>
+            <span>ou</span>
+            <button type="button" class="btn_drag_drop">Procure no seus arquivos</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="residence">Anexar (comprovante de residêcia)</label>
+          <input type="file" name="" id="residence">
+          <div class="drag_file_field">
+            <span class="material-symbols-outlined icon_drag_drop">
+            cloud_upload
+            </span>
+            <h2>Arraste e Solte o arquivo</h2>
+            <span>ou</span>
+            <button type="button" class="btn_drag_drop">Procure no seus arquivos</button>
+          </div>
+        </div>
+
+        <footer>
+          <h2>Termos de Serviço</h2>
+          <article>
+            Por meio deste termo, declaro a veracidade no fornecimento correto dos dados pessoais do aluno, de seu responsável legal e do documento de identificação para a inscrição. Afirmo está ciente de que, o não atendimento ao pré-requisito, como idade, implicará no indeferimento da inscrição, assim como, n<strong>ão apresentar as cópias dos documentos no prazo determinado, implicará no cancelamento da vaga</strong> e o Liceu de Artes e Ofícios Claudio Santoro não garantirá a efetivação da matrícula.
+          </article>
+          <label for="checkbox_field"> <input type="checkbox" id="checkbox_field"> Li e aceito</label>
+          <div class="btns_form">
+            <button type="button" class="btn_pagination prev-step">Anterior</button>
+            <button type="button" class="btn_pagination next-step">Enviar</button>
+          </div>
+        </footer>
+
+      </fieldset>
+    </form>
+  </main>
+</body>
+
+<script src="src/components/formStep.js"></script>
+<script src="src/components/chosenBtn.js"></script>
+<script src="src/components/optionalField.js"></script>
+<script src="src/components/changeText.js"></script>
+<script src="src/components/maskInputs.js"></script>
+
+<script>
+  const checkboxField = document.querySelector('#checkbox_field')
+
+
+  checkboxField.addEventListener("click", () => {
+    if (checkboxField.checked) {
+      console.log(checkboxField.value);
+    }
+  });
+
+  checkboxField.addEventListener('click', () => {
+    checkboxField.classList.toggle('active_checkbox')
+  })
+</script>
+
+</html>
