@@ -156,6 +156,8 @@ button.btn_pagination.next-step {
   align-items: center;
   justify-content: center;
 
+  flex-shrink: 0;
+
   border: solid 1px var(--color02);
   border-radius: 2em;
 
@@ -163,6 +165,9 @@ button.btn_pagination.next-step {
   font-weight: 600;
 
   color: var(--color02);
+
+  width: 6em;
+  height: 2em;
 
   padding: .5em .6em .5em .6em;
   margin: 20px 10px 20px auto;
@@ -178,6 +183,7 @@ button.btn_pagination.prev-step {
   align-items: center;
   justify-content: center;
 
+  flex-shrink: 0;
 
   border: solid 1px var(--color02);
   border-radius: 2em;
@@ -186,6 +192,9 @@ button.btn_pagination.prev-step {
   font-weight: 600;
 
   color: var(--color02);
+
+  width: 6em;
+  height: 2em;
 
   padding: .5em .6em .5em .6em;
   margin: 20px auto 20px 10px;
