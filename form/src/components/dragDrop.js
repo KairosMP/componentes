@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const fileNameElement = dropZone.querySelector('.file-name')
     const inputFile = document.querySelector(`input.file-input[data-dropzone="${dropzoneID}"]`);
 
-    console.log('Input File:', inputFile);
-
     dropZone.addEventListener('dragover', e => {
       e.preventDefault()
       dropZone.classList.add('drag_over')

@@ -52,12 +52,12 @@
         </div>
 
         <div class="field">
-          <label>Genêro</label>
+          <h3>Genêro</h3>
           
           <div class="multi_fields">
-            <button type="button" class="optional optional_gender" data-group="gender">Masculino</button>
-            <button type="button" class="optional optional_gender" data-group="gender">Feminino</button>
-            <button type="button" class="optional optional_gender" data-group="gender">Outros</button>
+            <button type="button" class="optional optional_gender" data-group="gender" value="Masculino">Masculino</button>
+            <button type="button" class="optional optional_gender" data-group="gender" value="Feminino">Feminino</button>
+            <button type="button" class="optional optional_gender" data-group="gender" value="Outros">Outros</button>
           </div>
         </div>
         <div class="field">
@@ -113,22 +113,26 @@
         </div>
 
         <div class="field">
-          <label>Possui deficiência?</label>
+          <h3>Possui deficiência?</h3>
           <div class="two_fields">
-            <button type="button" id="field_visible_deficiency" class="optional optional_deficiency" data-group="deficiency">Sim</button>
-            <button type="button" id="field_hidden_deficiency" class="optional optional_deficiency" data-group="deficiency">Não</button>
+            <button type="button" id="field_visible_deficiency" class="optional optional_deficiency" data-group="deficiency"
+            value="yes">Sim</button>
+            <button type="button" id="field_hidden_deficiency" class="optional optional_deficiency" data-group="deficiency"
+            value="no">Não</button>
           </div>
         </div>
-        <div id="field_optional_deficiency" class="field">
+        <div class="field field_optional_deficiency">
           <label for="deficiency">Qual deficiência?</label>
           <input type="text" id="deficiency" autocomplete="off">
         </div>
 
         <div class="field">
-          <label>Você possui algum Instrumento?</label>
+          <h3>Você possui algum Instrumento?</h3>
           <div class="two_fields">
-            <button type="button" class="optional optional_instruments" data-group="instruments">Sim</button>
-            <button type="button" class="optional optional_instruments" data-group="instruments">Não</button>
+            <button type="button" class="optional optional_instruments" data-group="instruments"
+            value="yes">Sim</button>
+            <button type="button" class="optional optional_instruments" data-group="instruments"
+            value="no">Não</button>
           </div>
         </div>
 
@@ -210,18 +214,22 @@
         <h2>Estudante</h2>
 
         <div class="field">
-          <label>Estuda?</label>
+          <h3>Estuda?</h3>
           <div class="two_fields">
-            <button type="button" id="field_visible_student" class="optional optional_student active" data-group="student">Sim</button>
-            <button type="button" id="field_hidden_student" class="optional optional_student" data-group="student">Não</button>
+            <button type="button" id="field_visible_student" class="optional optional_student active" data-group="student"
+            value="yes">Sim</button>
+            <button type="button" id="field_hidden_student" class="optional optional_student" data-group="student"
+            value="no">Não</button>
           </div>
         </div>
 
         <div class="field field_optional_student active_field">
-          <label>Escola pública?</label>
+          <h3>Escola pública?</h3>
           <div class="two_fields">
-            <button type="button" id="field_visible_school" class="optional optional_school" data-group="school">Sim</button>
-            <button type="button" id="field_hidden_school" class="optional optional_school" data-group="school">Não</button>
+            <button type="button" id="field_visible_school" class="optional optional_school" data-group="school"
+            value="yes">Sim</button>
+            <button type="button" id="field_hidden_school" class="optional optional_school" data-group="school"
+            value="no">Não</button>
           </div>
         </div>
 
@@ -248,7 +256,7 @@
         <div class="field">
           <label for="semester">Ano/semestre</label>
           <input type="text" id="semester" autocomplete="off">
-          <small>Esse campo se refere ao ano que está.</small>
+          <small id="small_text_change">Esse campo se refere ao ano que está.</small>
         </div>
 
         <div class="btns_form">
@@ -280,6 +288,10 @@
             <input type="text" id="parent_father" autocomplete="off">
           </div>
           <div class="field field_parent active_field">
+            <label for="parent_father">Trabalho do seu pai</label>
+            <input type="text" id="parent_father" autocomplete="off">
+          </div>
+          <div class="field field_parent active_field">
             <label for="parent_mother">Nome da mãe</label>
             <input type="text" id="parent_mother" autocomplete="off">
           </div>
@@ -292,18 +304,20 @@
         <h2>Situação ecônomica</h2>
 
         <div class="field">
-          <label>Trabalha?</label>
+          <h3>Trabalha?</h3>
           <div class="two_fields">
-            <button type="button" id="field_visible_job" class="optional optional_job" data-group="job">Sim</button>
-            <button type="button" id="field_hidden_job" class="optional optional_job" data-group="job">Não</button>
+            <button type="button" id="field_visible_job" class="optional optional_job" data-group="job"
+            value="yes">Sim</button>
+            <button type="button" id="field_hidden_job" class="optional optional_job" data-group="job"
+            value="no">Não</button>
           </div>
         </div>
-        <div id="field_optional_job" class="field">
+        <div class="field field_optional_job">
           <label for="profession">Profissão/Ocup</label>
           <input type="text" id="profession" autocomplete="off">
         </div>
 
-        <div class="field">
+        <div class="field field_optional_job">
           <label for="workplace">Local de Trabalho</label>
           <input type="text" id="workplace" autocomplete="off">
         </div>
@@ -348,13 +362,15 @@
           <input type="text" id="people_work" autocomplete="off">
         </div>
         <div class="field">
-          <label>Recebe algum benefício?</label>
+          <h3>Recebe algum benefício?</h3>
           <div class="two_fields">
-            <button type="button" id="field_visible_benefit" class="optional optional_benefit" data-group="benefit">Sim</button>
-            <button type="button" id="field_hidden_benefit" class="optional optional_benefit" data-group="benefit">Não</button>
+            <button type="button" id="field_visible_benefit" class="optional optional_benefit" data-group="benefit"
+            value="yes">Sim</button>
+            <button type="button" id="field_hidden_benefit" class="optional optional_benefit" data-group="benefit"
+            value="no">Não</button>
           </div>
         </div>
-        <div id="field_optional_benefit" class="field">
+        <div class="field field_optional_benefit">
           <label for="benefit">Qual benefício?</label>
           <input type="text" id="benefit">
         </div>
@@ -445,11 +461,11 @@
 
 <script src="src/components/formStep.js"></script>
 <script src="src/components/chosenBtn.js"></script>
+<script src="src/components/buttonsValues.js"></script>
 <script src="src/components/optionalField.js"></script>
 <script src="src/components/changeText.js"></script>
 <script src="src/components/maskInputs.js"></script>
 <script src="src/components/checkboxValue.js"></script>
 <script src="src/components/dragDrop.js"></script>
-
 
 </html>

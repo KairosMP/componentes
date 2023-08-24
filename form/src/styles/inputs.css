@@ -15,6 +15,13 @@ label {
   margin-bottom: 4px;
 }
 
+h3 {
+  font-weight: 400;
+  font-size: 16px;
+
+  margin-bottom: 4px;
+}
+
 input {
   all: unset;
 
@@ -155,6 +162,7 @@ button.btns_change_fields {
 
   font-size: 1em;
   font-weight: 600;
+  color: var(--colorInputStrong);
 
   padding: .5em .6em .5em .6em;
   margin: 0;
@@ -316,18 +324,20 @@ div.drag_file_field.drag_over {
 
 /* fields optional */
 
-div#field_optional_deficiency, 
-div#field_optional_benefit,
+div.field_optional_deficiency, 
+div.field_optional_benefit,
 div.field_optional_student,
+div.field_optional_job,
 div.field_parent,
 div.field_responsible {
   display: none;
 }
 
 :is(
-  div#field_optional_deficiency, 
-  div#field_optional_benefit,
+  div.field_optional_deficiency, 
+  div.field_optional_benefit,
   div.field_optional_student,
+  div.field_optional_job,
   div.field_parent,
   div.field_responsible).active_field {
   display: flex;
