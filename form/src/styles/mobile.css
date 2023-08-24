@@ -36,7 +36,10 @@ input[type="date"] {
 
 /* drag & drop */
 
-div.drag_file_field > h2 , span.or {
+div.drag_file_field > h2 , sp , button {an.or
   display: none;
 }
 
+div.drag_file_field {
+  flex-direction: column-reverse;
+}

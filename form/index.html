@@ -373,8 +373,9 @@
 
         <div class="field">
           <label for="photo_student">Anexar (foto3x4)</label>
-          <input type="file" name="" id="photo_student">
-          <div class="drag_file_field">
+          <input type="file" name="" id="photo_student" class="file-input" data-dropzone="photo_student">
+          <div class="drag_file_field" data-dropzone="photo_student">
+            <span class="file-name"></span>
             <span class="material-symbols-outlined icon_drag_drop">
             cloud_upload
             </span>
@@ -386,8 +387,9 @@
 
         <div class="field">
           <label for="register_file_front">Anexar (RG/CNH) - <small>frente</small></label>
-          <input type="file" name="" id="register_file_front">
-          <div class="drag_file_field">
+          <input type="file" name="" id="register_file_front" class="file-input" data-dropzone="register_file_front">
+          <div class="drag_file_field" data-dropzone="register_file_front">
+            <span class="file-name"></span>
             <span class="material-symbols-outlined icon_drag_drop">
             cloud_upload
             </span>
@@ -397,9 +399,10 @@
           </div>
         </div>
         <div class="field">
-          <label for="registe_file_back">Anexar (RG/CNH) - <small>verso</small></label>
-          <input type="file" name="" id="registe_file_back">
-          <div class="drag_file_field">
+          <label for="register_file_back">Anexar (RG/CNH) - <small>verso</small></label>
+          <input type="file" name="" id="register_file_back" class="file-input" data-dropzone="register_file_back">
+          <div class="drag_file_field" data-dropzone="register_file_back">
+            <span class="file-name"></span>
             <span class="material-symbols-outlined icon_drag_drop">
             cloud_upload
             </span>
@@ -411,8 +414,9 @@
 
         <div class="field">
           <label for="residence">Anexar (comprovante de residêcia)</label>
-          <input type="file" name="" id="residence">
-          <div class="drag_file_field">
+          <input type="file" name="" id="residence" class="file-input" data-dropzone="residence">
+          <div class="drag_file_field" data-dropzone="residence">
+            <span class="file-name"></span>
             <span class="material-symbols-outlined icon_drag_drop">
             cloud_upload
             </span>
@@ -444,20 +448,8 @@
 <script src="src/components/optionalField.js"></script>
 <script src="src/components/changeText.js"></script>
 <script src="src/components/maskInputs.js"></script>
+<script src="src/components/checkboxValue.js"></script>
+<script src="src/components/dragDrop.js"></script>
 
-<script>
-  const checkboxField = document.querySelector('#checkbox_field')
-
-
-  checkboxField.addEventListener("click", () => {
-    if (checkboxField.checked) {
-      console.log(checkboxField.value);
-    }
-  });
-
-  checkboxField.addEventListener('click', () => {
-    checkboxField.classList.toggle('active_checkbox')
-  })
-</script>
 
 </html>

@@ -263,6 +263,13 @@ div.drag_file_field {
 
   background-color: var(--colorBody);
   color: var(--color02);
+
+  transition: all 275ms ease-in-out;
+}
+
+div.drag_file_field.drag_over {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-color: var(--colorSuccess);
 }
 
  div.drag_file_field span.icon_drag_drop {
@@ -274,6 +281,8 @@ div.drag_file_field {
  }
 
  div.drag_file_field button.btn_drag_drop {
+  cursor: pointer;
+
   margin: 8px;
   padding: 5px 10px;
 
@@ -293,6 +302,16 @@ div.drag_file_field {
   scale: 1.03;
   background-color: var(--color03);
   color: var(--colorBody);
+ }
+
+ div.drag_file_field:has(span.file-name.active_text) {
+  flex-direction: column-reverse;
+
+  & button.btn_drag_drop,
+  h2,
+  span.or {
+    display: none;
+  }
  }
 
 /* fields optional */
