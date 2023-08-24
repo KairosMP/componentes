@@ -36,7 +36,7 @@ input[type="date"] {
 
 /* drag & drop */
 
-div.drag_file_field > h2 , sp , button {an.or
+div.drag_file_field > h2 , span.or , button.btn_drag_drop {
   display: none;
 }
 
