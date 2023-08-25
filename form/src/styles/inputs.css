@@ -26,6 +26,7 @@ input {
   all: unset;
 
   font-size: 1.1em;
+  text-transform: capitalize;
 
   padding: .2em .5em;
 
@@ -261,6 +262,8 @@ div.drag_file_field {
   align-items: center;
   justify-content: center;
 
+  overflow: hidden;
+
   height: 15%;
   width: 50%;
 
@@ -321,6 +324,80 @@ div.drag_file_field.drag_over {
     display: none;
   }
  }
+
+/*? input specific styles */
+
+input#email_student {
+ text-transform: none;
+}
+
+/** validation inputs */
+
+.success_input {
+  border-color: var(--colorSuccess);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.failure_input {
+  border-color: var(--colorFailure);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+
+div.field:has(input.success_input) {
+  position: relative;
+
+  & > i#success_icon {
+    display: block;
+  }
+}
+
+div.field:has(input.failure_input) {
+  position: relative;
+
+  & > i#failure_icon {
+    display: block;
+  }
+}
+
+
+i#success_icon {
+  --sizeIcon: 1.4em;
+
+  display: none;
+  position: absolute;
+
+  top: 52%;
+  right: .4em;
+
+  width: var(--sizeIcon);
+  height:var(--sizeIcon);
+
+  border-radius: 1em;
+
+  background-image: url('../images/success.png');
+  background-size: cover;
+}
+
+
+i#failure_icon {
+  --sizeIcon: 1.4em;
+
+  display: none;
+  position: absolute;
+
+  top: 52%;
+  right: .4em;
+
+  width: var(--sizeIcon);
+  height:var(--sizeIcon);
+
+  border-radius: 1em;
+
+
+  background-image: url('../images/failure.png');
+  background-size: cover;
+}
 
 /* fields optional */
 

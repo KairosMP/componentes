@@ -62,11 +62,13 @@
         </div>
         <div class="field">
           <label for="general_record" id="general_record_label">RG</label>
-          <input type="text" id="general_record" autocomplete="off">
+          <input type="text" id="general_record" autocomplete="off" placeholder="0000000-0">
         </div>
         <div class="field">
           <label for="physical_person">CPF</label>
           <input type="text" name="physical_person_name"  id="physical_person" autocomplete="off" placeholder="000.000.000-00">
+          <i id="success_icon"></i>
+          <i id="failure_icon"></i>
         </div>
 
         <div class="field">
@@ -148,6 +150,8 @@
           <div id="postal_code_field" class="field">
             <label for="postal_code" >CEP</label>
             <input type="text" id="postal_code" autocomplete="off" placeholder="00000-000">
+            <i id="success_icon"></i>
+            <i id="failure_icon"></i>
           </div>
           <div class="field">
             <label for="city">Cidade</label>
@@ -209,7 +213,7 @@
 
      
       <fieldset class="step">
-        <legend>Escolarida</legend>
+        <legend>Escolaridade</legend>
 
         <h2>Estudante</h2>
 
@@ -255,7 +259,7 @@
         </div>
         <div class="field">
           <label for="semester">Ano/semestre</label>
-          <input type="text" id="semester" autocomplete="off">
+          <input type="text" id="semester" autocomplete="off" placeholder="Ex: 8º Ano">
           <small id="small_text_change">Esse campo se refere ao ano que está.</small>
         </div>
 
@@ -288,8 +292,8 @@
             <input type="text" id="parent_father" autocomplete="off">
           </div>
           <div class="field field_parent active_field">
-            <label for="parent_father">Trabalho do seu pai</label>
-            <input type="text" id="parent_father" autocomplete="off">
+            <label for="parent_father_job">Trabalho do seu pai</label>
+            <input type="text" id="parent_father_job" autocomplete="off">
           </div>
           <div class="field field_parent active_field">
             <label for="parent_mother">Nome da mãe</label>
@@ -465,7 +469,9 @@
 <script src="src/components/optionalField.js"></script>
 <script src="src/components/changeText.js"></script>
 <script src="src/components/maskInputs.js"></script>
+<script src="src/components/physicalPersonValidation.js"></script>
 <script src="src/components/checkboxValue.js"></script>
 <script src="src/components/dragDrop.js"></script>
+
 
 </html>
