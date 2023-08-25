@@ -63,6 +63,8 @@
         <div class="field">
           <label for="general_record" id="general_record_label">RG</label>
           <input type="text" id="general_record" autocomplete="off" placeholder="0000000-0">
+          <i id="success_icon"></i>
+          <i id="failure_icon"></i>
         </div>
         <div class="field">
           <label for="physical_person">CPF</label>
@@ -146,6 +148,10 @@
         <legend>Endereço e contato</legend>
 
         <h2>Localidade</h2>
+        <div class="field">
+          <label for="state">Estado</label>
+          <input type="text" id="state" autocomplete="off">
+        </div>
         <div class="two_fields_diveder">
           <div id="postal_code_field" class="field">
             <label for="postal_code" >CEP</label>
@@ -203,6 +209,8 @@
           <label for="email_student">E-mail</label>
           <input type="email" id="email_student" autocomplete="off"
           placeholder="Ex: JoaoSilva@gmail.com">
+          <i id="success_icon"></i>
+          <i id="failure_icon"></i>
         </div>
 
         <div class="btns_form">
@@ -469,9 +477,9 @@
 <script src="src/components/optionalField.js"></script>
 <script src="src/components/changeText.js"></script>
 <script src="src/components/maskInputs.js"></script>
-<script src="src/components/physicalPersonValidation.js"></script>
+<script src="src/components/genericValidation.js"></script>
+<script src="src/components/postalCodeFuctions.js"></script>
 <script src="src/components/checkboxValue.js"></script>
 <script src="src/components/dragDrop.js"></script>
-
 
 </html>

@@ -131,6 +131,10 @@ div.two_fields_diveder{
 
   & div#postal_code_field {
     width: 105px;
+
+    &:has(input.success_input, input.failure_input)  {
+      width: 130px;
+    }
   }
 
   & div#number_field{
