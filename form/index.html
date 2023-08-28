@@ -52,14 +52,19 @@
         </div>
 
         <div class="field">
-          <h3>Genêro</h3>
-          
-          <div class="multi_fields">
-            <button type="button" class="optional optional_gender" data-group="gender" value="Masculino">Masculino</button>
-            <button type="button" class="optional optional_gender" data-group="gender" value="Feminino">Feminino</button>
-            <button type="button" class="optional optional_gender" data-group="gender" value="Outros">Outros</button>
+          <label for="gender">Genêro</label>
+          <div class="select_input_field">
+            <select name="" id="gender">
+              <option value="">Masculino</option>
+              <option value="">Feminino</option>
+              <option value="">Outros</option>
+            </select>
+            <span class="material-symbols-outlined arrow_select">
+              expand_more
+            </span>
           </div>
         </div>
+
         <div class="field">
           <label for="general_record" id="general_record_label">RG</label>
           <input type="text" id="general_record" autocomplete="off" placeholder="0000000-0">
@@ -289,7 +294,7 @@
               Pais
             </button>
             <button type="button" id="btns_responsible" class="btns_change_fields" data-group="responsible">
-              Renposáveis
+              Renposavel
             </button>
           </div>
         </hgroup>

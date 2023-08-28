@@ -1,4 +1,3 @@
-const btnGender = document.querySelectorAll('.optional_gender');
 const btnDeficiency = document.querySelectorAll('.optional_deficiency');
 const btnInstruments = document.querySelectorAll('.optional_instruments');
 const btnBenefit = document.querySelectorAll('.optional_benefit');
@@ -16,10 +15,6 @@ function handleButtonClick(event) {
     button.classList.toggle('active', button === clickedButton);
   });
 }
-
-btnGender.forEach((button) => {
-  button.addEventListener('click', handleButtonClick);
-});
 
 btnDeficiency.forEach((button) => {
   button.addEventListener('click', handleButtonClick);

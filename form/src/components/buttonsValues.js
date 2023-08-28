@@ -1,5 +1,4 @@
 const buttonClasses = [
-  'optional_gender',
   'optional_deficiency',
   'optional_instruments',
   'optional_student',
