@@ -64,7 +64,7 @@ main {
   display: flex;
   flex-direction: column;
 
-  padding: 20px;
+  padding: 15px;
  
   width: 50%;
   min-height: 70%;
@@ -156,13 +156,15 @@ button.btn_pagination.next-step {
   all: unset;
   cursor: pointer;
 
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   flex-shrink: 0;
 
-  border: solid 1px var(--color02);
+  border: solid 2px var(--color02);
   border-radius: 2em;
 
   font-size: 1em;
@@ -170,16 +172,89 @@ button.btn_pagination.next-step {
 
   color: var(--color02);
 
-  width: 10em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
 
-  padding: .5em .6em .5em .6em;
-  margin: 20px 10px 20px auto;
+  padding: .5em;
+  margin: 20px 10px 10px auto;
 
   transition: all 250ms ease-in-out;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    transform: rotate(45deg);
+    top: 34%;
+    left: 30%;
+
+    width: 10px;
+    height: 10px;
+
+    border: solid .2em var(--color02);
+    border-left: none;
+    border-bottom: none;
+
+    transition: all 250ms ease-in-out;
+  }
+
+  &:hover::after{
+    border-color: var(--colorBody);
+  }
 }
 
 button.btn_pagination.prev-step {
+  all: unset;
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: solid 2px var(--color02);
+  border-radius: 2em;
+
+  font-size: 1em;
+  font-weight: 600;
+
+  color: var(--color02);
+
+  width: 1.5em;
+  height: 1.5em;
+
+  padding: .5em;
+  margin: 20px auto 20px 10px;
+
+  transition: all 250ms ease-in-out;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    transform: rotate(225deg);
+    top: 34%;
+    right: 30%;
+
+    width: 10px;
+    height: 10px;
+
+    border: solid .2em var(--color02);
+    border-left: none;
+    border-bottom: none;
+
+    transition: all 250ms ease-in-out;
+  }
+
+  &:hover::before{
+    border-color: var(--colorBody);
+  }
+}
+
+button.btn_pagination.submit {
   all: unset;
   cursor: pointer;
 
@@ -195,13 +270,14 @@ button.btn_pagination.prev-step {
   font-size: 1em;
   font-weight: 600;
 
-  color: var(--color02);
+  color: var(--colorBody);
+  background-color: var(--color02);
 
   width: 10em;
   height: 2em;
 
   padding: .5em .6em .5em .6em;
-  margin: 20px auto 20px 10px;
+  margin: 20px 20px auto 10px;
 
   transition: all 250ms ease-in-out;
 }
@@ -209,6 +285,8 @@ button.btn_pagination.prev-step {
 button.btn_pagination:hover {
   color: var(--colorBody);
   background-color: var(--color03);
+
+  scale: 1.02;
 }
 
 /* progress-bar */
@@ -255,7 +333,9 @@ div.progress {
 
 div.circle {
   background-color: #fff;
-  color: #999;
+
+  font-weight: 600;
+  color: var(--colorInputStrong);
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -264,7 +344,7 @@ div.circle {
   align-items: center;
   justify-content: center;
   border: 3px solid var(--colorLineBorderEmpty);
-  transition: 350ms ease;
+  transition: 450ms ease;
 }
 
 div.circle.actived {

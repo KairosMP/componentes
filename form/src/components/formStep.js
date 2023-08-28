@@ -45,17 +45,26 @@ function prevStep() {
   }
 }
 
-nextButtons.forEach(button => {
-  button.addEventListener('click', event => {
+function scrollToTop(params) {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
+nextButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
     event.preventDefault();
     nextStep();
+    scrollToTop();
   });
 });
 
-prevButtons.forEach(button => {
-  button.addEventListener('click', event => {
+prevButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
     event.preventDefault();
     prevStep();
+    scrollToTop();
   });
 });
 
